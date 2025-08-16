@@ -1,9 +1,10 @@
-import app from './src/my-application/index.js'
+import readlineSync from 'readline-sync'
 
-import pkg from 'lodash';
+console.log('Сколько вам лет?')
 
-const { random } = pkg;
+const age = readlineSync.questionInt('Введите ваш возраст: ')
+const currentYear = new Date().getFullYear()
+const birthYear = currentYear - age
 
-app()
+console.log(`Ваш год рождения: ${birthYear}`)
 
-console.log('Absolutely random number', random(0, 55));
